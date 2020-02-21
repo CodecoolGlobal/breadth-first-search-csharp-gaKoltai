@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace BFS_c_sharp.Model
@@ -44,7 +45,6 @@ namespace BFS_c_sharp.Model
             return shortestPathStack.ToList();
 
         }
-
         private Dictionary<UserNode, int> InitializeDistanceMap()
         {
             var distanceMap = new Dictionary<UserNode, int>();

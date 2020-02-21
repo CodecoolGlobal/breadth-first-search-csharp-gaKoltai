@@ -105,4 +105,4 @@ namespace BFS_c_sharp_Tests
             Assert.AreEqual(expected, _userGraph.GetShortestPathBetweenNodes(sanyi, brandon));
         }
     }
-    }
+}

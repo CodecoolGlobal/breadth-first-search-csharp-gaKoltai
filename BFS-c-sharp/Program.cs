@@ -14,9 +14,6 @@ namespace BFS_c_sharp
             var userGraph = new UserGraph(users);
 
             var shortestDistance = userGraph.GetShortestDistanceBetweenNodes(users[0], users[6]);
-
-            Console.WriteLine(shortestDistance);
-            Console.ReadKey();
         }
     }
 }
