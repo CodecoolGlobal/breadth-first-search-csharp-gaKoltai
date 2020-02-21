@@ -14,38 +14,7 @@ namespace BFS_c_sharp.Model
         
         public int GetShortestDistanceBetweenNodes(UserNode start, UserNode end)
         {
-            if (start.Equals(end))
-            {
-                return 0;
-            }
-            
-            var adjacencyQueue = new Queue<UserNode>();
-            var visitedNodeSet = new HashSet<UserNode>{start};
-            var distances = InitializeDistanceMap();
-
-            adjacencyQueue.Enqueue(start);
-            distances[start] = 0;
-
-            while (adjacencyQueue.Count > 0)
-            {
-                var nodeBeingChecked = adjacencyQueue.Dequeue();
-
-                if (nodeBeingChecked.Equals(end))
-                {
-                    return distances[nodeBeingChecked];
-                }
-                
-                foreach (var friend in nodeBeingChecked.Friends)
-                {
-                    if (visitedNodeSet.Contains(friend)) continue;
-                    
-                    distances[friend] = distances[nodeBeingChecked] + 1;
-                    adjacencyQueue.Enqueue(friend);
-                    visitedNodeSet.Add(friend);
-                }
-            }
-
-            return 0;
+            return GetShortestPathBetweenNodes(start, end).Count - 1;
         }
 
         public List<UserNode> GetShortestPathBetweenNodes(UserNode start, UserNode end)
