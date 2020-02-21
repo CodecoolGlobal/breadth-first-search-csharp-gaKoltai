@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 
+
 namespace BFS_c_sharp
 {
     class Program
@@ -10,13 +11,11 @@ namespace BFS_c_sharp
         {
             RandomDataGenerator generator = new RandomDataGenerator();
             List<UserNode> users = generator.Generate();
+            var userGraph = new UserGraph(users);
 
-            foreach (var user in users)
-            {
-                Console.WriteLine(user);
-            }
+            var shortestDistance = userGraph.GetShortestDistanceBetweenNodes(users[0], users[6]);
 
-            Console.WriteLine("Done");
+            Console.WriteLine(shortestDistance);
             Console.ReadKey();
         }
     }
